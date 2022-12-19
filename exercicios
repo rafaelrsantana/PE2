@@ -1,0 +1,74 @@
+# 1. Uma máquina produz rolamentos que apresentam desvio padrão de 0,042 polegadas em seu
+# diâmetro. Desejando-se conhecer o diâmetro médio dos rolamentos produzidos por esta máquina, extraiu-se
+# uma amostra de 100 rolamentos, observando-se uma média igual a 0,824 polegadas. Obter o intervalo com
+# 0,90 de confiança para o verdadeiro diâmetro médio dos rolamentos.
+confianca = 0.90
+desviopadrao = 0.042
+amostra = 100
+media = 0.824
+alfa = 0.10
+p = 1-alfa/2
+zc = qnorm(p, 0,1)
+zc = round(zc,2)
+erro = zc * desviopadrao/sqrt(amostra)
+erro = round(erro, 5)
+cat("[",media - erro, ",", media + erro, "]")
+
+# 2.Uma linha de montagem de veículos do século passado, tinha variância igual a
+# 16 dias. Um amostra de 64 veículos produzidos foi selecionado aleatoriamente e obteve-se
+# um tempo médio de produção de 5 dias. Construir um intervalo com nível confiança de
+# 95%.
+variancia = 16
+#desvio padrao é a raiz da variancia
+desviopadrao = 4
+amostra = 64
+media = 5
+confianca = 95
+alfa = 0.05
+p = 1-alfa/2
+zc = qnorm(p, 0,1)
+zc = round(zc,2)
+erro = zc * desviopadrao/sqrt(amostra)
+erro = round(erro, 5)
+cat("[",media - erro, ",", media + erro, "]")
+
+# 3. A indústria Brasileira, historicamente, produz multímetros com desvio padrão = 3.0 
+# Um lote de 18 multímetros, para verificação de qualidade, resultou em medição de 4,7 .
+# a) Construir um intervalo com nível confiança de 98%.
+desviopadrao = 3
+amostra = 18
+media = 4.7
+confianca = 98
+alfa = 0.02
+p = 1-alfa/2
+zc = qnorm(p, 0,1)
+zc = round(zc,2)
+erro = zc * desviopadrao/sqrt(amostra)
+erro = round(erro, 5)
+cat("[",media - erro, ",", media + erro, "]")
+
+# b) Construir um intervalo com nível confiança de 90%.
+desviopadrao = 3
+amostra = 18
+media = 4.7
+confianca = 90
+alfa = 0.10
+p = 1-alfa/2
+zc = qnorm(p, 0,1)
+zc = round(zc,2)
+erro = zc * desviopadrao/sqrt(amostra)
+erro = round(erro, 5)
+cat("[",media - erro, ",", media + erro, "]")
+
+# 4. Em um processo para obtenção de compostos químicos de tintas, obteve-se os seguintes
+# tempos: 90, 92, 92, 95, 98, 99, 100, 100, 100 e 117 segundos.
+# a) Construir um intervalo com nível confiança de 95%.
+valores <- c (90, 92, 92, 95, 98, 99, 100, 100, 100 e 117)
+t.test(valores, conf=0.95)
+
+#Exemplo 05: Foram realizados testes glicêmicos em 25 pacientes após um jejum de 8 horas.
+# Os resultados são apresentados na tabela abaixo. Encontrar um intervalo de 
+# confiança de nível de 95 % para a média μ.
+val = scan()
+1: 80 118 100 90 83
+
